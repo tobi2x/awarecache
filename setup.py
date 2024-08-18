@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='awarecache',
-    version='1.2.0',
+    version='1.5.4',
     packages=find_packages(),
     install_requires=[],
     tests_require=['pytest'],

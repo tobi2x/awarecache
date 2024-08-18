@@ -14,7 +14,7 @@ __all__ = [
     'CacheMetrics'
 ]
 
-__version__ = '1.2.0'
+__version__ = '1.5.4'
 __author__ = 'Tobi Ayodeji'
 __email__ = 'philayodeji07@gmail.com'
 
