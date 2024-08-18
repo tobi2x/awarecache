@@ -1,6 +1,6 @@
-from .awarecache.cache import Cache
-from .awarecache.cache_strategies import LFUCache, LRUCache, TinyLFUCache, MRUCache, FIFOCache, SLRUCache, ClockCache
-from .awarecache.cache_metrics import CacheMetrics
+from .cache import Cache
+from .cache_strategies import LFUCache, LRUCache, TinyLFUCache, MRUCache, FIFOCache, SLRUCache, ClockCache
+from .cache_metrics import CacheMetrics
 
 __all__ = [
     'Cache',
