@@ -1,19 +1,16 @@
 # AwareCache
 
-## Overview
-
-`AwareCache` is a versatile caching library that provides context-aware caching with customizable eviction policies (LRU and LFU) and detailed cache metrics. It allows you to manage different caches for different contexts with various caching strategies, and track performance metrics such as cache hits and misses.
+A context-aware caching library with customizable eviction policies and performance metrics. `awarecache` supports various cache eviction strategies, allowing you to choose the one that best fits your application's needs.
 
 ## Features
 
-- **Context-Aware Caching**: Manage separate caches for different contexts, each with its own eviction policy and capacity.
-- **Customizable Policies**: Choose between LRU (Least Recently Used) and LFU (Least Frequently Used) caching strategies.
-- **Cache Metrics**: Track cache hits and misses to monitor the performance of your caching system.
-- **Simple API**: Easy-to-use API for interacting with caches and managing policies.
+- **Context-Aware Caching**: Manage different caches for different contexts.
+- **Customizable Eviction Policies**: Choose from LRU, LFU, MRU, FIFO, TinyLFU, SLRU, and Clock caching strategies.
+- **Cache Metrics**: Track cache performance with hit and miss statistics.
 
 ## Installation
 
-You can install the package via pip:
+You can install `awarecache` via pip:
 
 ```bash
 pip install awarecache
