@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='awarecache',
     version='1.5.6',
-    packages=find_packages(),
+    packages=find_packages(include=['awarecache', 'awarecache.*']),
     install_requires=[],
     tests_require=['pytest'],
     author='Tobi Ayodeji',
