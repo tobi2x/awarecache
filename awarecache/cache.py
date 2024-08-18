@@ -1,5 +1,5 @@
-from cache_metrics import CacheMetrics
-from awarecache.cache_strategies import LFUCache, LRUCache, TinyLFUCache, MRUCache, FIFOCache, SLRUCache, ClockCache
+from .cache_metrics import CacheMetrics
+from .cache_strategies import LFUCache, LRUCache, TinyLFUCache, MRUCache, FIFOCache, SLRUCache, ClockCache
 
 class Cache:
     """
