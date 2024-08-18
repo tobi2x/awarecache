@@ -1,0 +1,6 @@
+README.md
+setup.py
+awarecache.egg-info/PKG-INFO
+awarecache.egg-info/SOURCES.txt
+awarecache.egg-info/dependency_links.txt
+awarecache.egg-info/top_level.txt
