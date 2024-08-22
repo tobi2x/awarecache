@@ -1,5 +1,6 @@
 from collections import Counter, OrderedDict, deque, defaultdict
 
+
 class LFUCache:
     """
     A Least Frequently Used (LFU) cache implementation.
@@ -90,6 +91,7 @@ class LFUCache:
         key, _ = self.freq[self.min_freq].popitem(last=False)
         del self.cache[key]
 
+
 class LRUCache:
     """
     A Least Recently Used (LRU) cache implementation.
@@ -143,6 +145,7 @@ class LRUCache:
         if len(self.cache) > self.capacity:
             self.cache.popitem(last=False)
 
+
 class MRUCache:
     """
     A Most Recently Used (MRU) cache implementation.
@@ -194,6 +197,7 @@ class MRUCache:
         self.cache[key] = value
         if len(self.cache) > self.capacity:
             self.cache.popitem(last=True)
+
 
 class FIFOCache:
     """
@@ -249,6 +253,7 @@ class FIFOCache:
         self.cache[key] = value
         self.order.append(key)
         
+
 
 class TinyLFUCache:
     """
@@ -315,6 +320,7 @@ class TinyLFUCache:
         least_frequent_key = min(self.cache, key=lambda k: self.frequency[k])
         del self.cache[least_frequent_key]
         del self.frequency[least_frequent_key]
+
 
 class SLRUCache:
     """
@@ -402,7 +408,8 @@ class SLRUCache:
             del self.protected_cache[oldest]
         self.protected_cache[key] = value
         self.protected.append(key)
-        
+
+
 class ClockCache:
     """
     A Clock (Second Chance) cache implementation.

@@ -33,4 +33,4 @@ class CacheMetrics:
         Returns:
             dict: A dictionary containing the number of hits and misses.
         """
-        return {'hits': self.hits, 'misses': self.misses}
+        return {"hits": self.hits, "misses": self.misses}

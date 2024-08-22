@@ -1,5 +1,14 @@
 from .cache_metrics import CacheMetrics
-from .cache_strategies import LFUCache, LRUCache, TinyLFUCache, MRUCache, FIFOCache, SLRUCache, ClockCache
+from .cache_strategies import (
+    LFUCache,
+    LRUCache,
+    TinyLFUCache,
+    MRUCache,
+    FIFOCache,
+    SLRUCache,
+    ClockCache,
+)
+
 
 class Cache:
     """
@@ -14,16 +23,16 @@ class Cache:
     """
 
     POLICY_MAP = {
-        'LRU': LRUCache,
-        'LFU': LFUCache,
-        'MRU': MRUCache,
-        'FIFO': FIFOCache,
-        'TinyLFU': TinyLFUCache,
-        'SLRU': SLRUCache,
-        'Clock': ClockCache
+        "LRU": LRUCache,
+        "LFU": LFUCache,
+        "MRU": MRUCache,
+        "FIFO": FIFOCache,
+        "TinyLFU": TinyLFUCache,
+        "SLRU": SLRUCache,
+        "Clock": ClockCache,
     }
 
-    def __init__(self, default_policy='LRU', default_capacity=100):
+    def __init__(self, default_policy="LRU", default_capacity=100):
         """
         Initializes the Cache with a default policy and capacity.
 
@@ -52,13 +61,15 @@ class Cache:
         if not context:
             raise ValueError("Context must be a non-empty string.")
         if policy not in self.POLICY_MAP:
-            raise ValueError("Policy must be one of ['LRU', 'LFU', 'MRU', 'FIFO', 'TinyLFU', 'SLRU', 'Clock'].")
+            raise ValueError(
+                "Policy must be one of ['LRU', 'LFU', 'MRU', 'FIFO', 'TinyLFU', 'SLRU', 'Clock']."
+            )
         if capacity is not None and capacity <= 0:
             raise ValueError("Capacity must be a positive integer.")
-        
+
         self.context_policies[context] = {
-            'policy': policy,
-            'capacity': capacity or self.default_capacity
+            "policy": policy,
+            "capacity": capacity or self.default_capacity,
         }
         self.context_cache[context] = self._create_cache(policy, capacity)
 
@@ -150,4 +161,3 @@ class Cache:
             dict: A dictionary containing the number of hits and misses.
         """
         return self.metrics.get_metrics()
-
