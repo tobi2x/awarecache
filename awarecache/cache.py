@@ -153,7 +153,25 @@ class Cache:
         cache.put(key, value)
         self.metrics.record_miss()  # Assuming put implies a miss initially
 
-    def get_metrics(self):
+    def clear_cache(self, context=None):
+        """
+        Clears the cache for a specific context or for all contexts if no context is specified.
+
+        Args:
+            context (str, optional): The context for which to clear the cache. If None, clears all caches.
+
+        Raises:
+            ValueError: If the context does not exist.
+        """
+        if context:
+            if context not in self.context_cache:
+                raise ValueError(f"Context '{context}' not set or does not exist.")
+            self.context_cache[context].clear()
+        else:
+            for cache in self.context_cache.values():
+                cache.clear()
+
+    def get_metrics(self) -> dict[str, int]:
         """
         Retrieves the cache performance metrics.
 
