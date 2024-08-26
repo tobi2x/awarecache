@@ -90,6 +90,12 @@ class LFUCache:
         """
         key, _ = self.freq[self.min_freq].popitem(last=False)
         del self.cache[key]
+        
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
 
 
 class LRUCache:
@@ -144,6 +150,12 @@ class LRUCache:
         self.cache[key] = value
         if len(self.cache) > self.capacity:
             self.cache.popitem(last=False)
+    
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
 
 
 class MRUCache:
@@ -197,6 +209,12 @@ class MRUCache:
         self.cache[key] = value
         if len(self.cache) > self.capacity:
             self.cache.popitem(last=True)
+            
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
 
 
 class FIFOCache:
@@ -253,6 +271,12 @@ class FIFOCache:
         self.cache[key] = value
         self.order.append(key)
         
+        
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
 
 
 class TinyLFUCache:
@@ -320,6 +344,12 @@ class TinyLFUCache:
         least_frequent_key = min(self.cache, key=lambda k: self.frequency[k])
         del self.cache[least_frequent_key]
         del self.frequency[least_frequent_key]
+        
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
 
 
 class SLRUCache:
@@ -398,6 +428,12 @@ class SLRUCache:
                 del self.probation_cache[oldest]
             self.probation_cache[key] = value
             self.probation.append(key)
+            
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
 
     def _promote_to_protected(self, key, value):
         """
@@ -484,3 +520,9 @@ class ClockCache:
                 else:
                     self.reference_bits[current_key] = 0
                 self.pointer = (self.pointer + 1) % self.capacity
+                
+    def clear(self):
+        """
+        Clears all items from the cache.
+        """
+        self.cache.clear()
